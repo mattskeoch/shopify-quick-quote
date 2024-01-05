@@ -15,14 +15,14 @@
         <span class="progress__detail">Your Upgrades</span>
       </a>
     </li>
-    <!-- Upcoming Step -->
+
     <li class="progress__item">
       <a href="#" class="progress__link" id="navStep3">
         <span class="progress__step">Step 3</span>
         <span class="progress__detail">Details</span>
       </a>
     </li>
-    <!-- Upcoming Step -->
+
     <li class="progress__item">
       <a href="#" class="progress__link" id="navStep4">
         <span class="progress__step">Step 4</span>
@@ -258,7 +258,7 @@
     color: #212121;
   }
 
-  /* Modifiers for completed steps */
+
   .progress__link--completed {
     border-top: 4px solid #dc2626;
     color: #991b1b;
@@ -268,7 +268,7 @@
     border-color: #f87171;
   }
 
-  /* Modifiers for upcoming steps */
+
   .progress__link {
     border-top: 4px solid #f87171;
     color: #f87171;
@@ -278,7 +278,6 @@
     border-top: 4px solid #dc2626;
   }
 
-  /* Modifiers for current steps */
   .progress__link--current {
     border-top: 4px solid #dc2626;
   }
@@ -331,7 +330,7 @@
     margin-right: 1rem;
   }
 
-  /* Responsive layout for form */
+
   @media (min-width: 640px) {
     .form__group {
       flex: 1 1 auto;
@@ -468,7 +467,7 @@
 
   .option:hover,
   .option__input:checked ~ .option__interactive .option:hover {
-    border-color: #f87171; /* Ensures hover color remains after checked */
+    border-color: #f87171;
   }
 
   .option:focus-within {
@@ -481,18 +480,17 @@
   }
 
   .option__icon {
-    /* Define default state for icon */
+
     visibility: hidden;
-    fill: #000; /* Default fill */
+    fill: #000;
   }
 
   .option__input:checked ~ .option__interactive .option__border {
-    border-color: #f87171; /* Checked state border color */
+    border-color: #f87171;
   }
   .option__input:checked ~ .option__interactive .option__icon {
-    visibility: visible; /* Show icon only when checked */
-    fill: #dc2626; /* Fill color for checked state */
-  }
+    visibility: visible;
+    fill: #dc2626;
 {% endstyle %}
 
 <script>
