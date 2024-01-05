@@ -1,0 +1,535 @@
+<h1>QUICK QUOTE</h1>
+<nav aria-label="Progress" class="progress">
+  <ol class="progress__list">
+    <!-- Current Step -->
+    <li class="progress__item">
+      <a href="#" class="progress__link progress__link--current" id="navStep1" aria-current="step">
+        <span class="progress__step" id="navStep1">Step 1</span>
+        <span class="progress__detail">Your Vehicle</span>
+      </a>
+    </li>
+
+    <li class="progress__item">
+      <a href="#" class="progress__link" id="navStep2">
+        <span class="progress__step">Step 2</span>
+        <span class="progress__detail">Your Upgrades</span>
+      </a>
+    </li>
+    <!-- Upcoming Step -->
+    <li class="progress__item">
+      <a href="#" class="progress__link" id="navStep3">
+        <span class="progress__step">Step 3</span>
+        <span class="progress__detail">Details</span>
+      </a>
+    </li>
+    <!-- Upcoming Step -->
+    <li class="progress__item">
+      <a href="#" class="progress__link" id="navStep4">
+        <span class="progress__step">Step 4</span>
+        <span class="progress__detail">Confirmation</span>
+      </a>
+    </li>
+  </ol>
+</nav>
+
+<div class="card">
+  <!-- Step 1 -->
+  <div class="card__content" id="step1">
+    <h2 class="card__title">Select Your Vehicle</h2>
+    <div class="card__text">
+      <p>Select your vehicle below to begin your Autospec 4x4 Quick Quote.</p>
+    </div>
+    <form class="card__form">
+      <div class="form__group">
+        <label for="make" class="form__label">Make</label>
+        <input type="text" name="make" id="email" class="form__input" placeholder="Vehicle Make">
+      </div>
+      <div class="form__group">
+        <label for="model" class="form__label">Model</label>
+        <input type="text" name="model" id="email" class="form__input" placeholder="Vehicle Model">
+      </div>
+      <div class="form__group">
+        <label for="year" class="form__label">Year</label>
+        <input type="text" name="year" id="email" class="form__input" placeholder="Vehicle Year">
+      </div>
+    </form>
+    <button type="button" class="form__button" onclick="goToStep(2)">Next Step</button>
+  </div>
+  <!-- Step 2 -->
+  <div class="card__content" id="step2" style="display:none;">
+    <h2 class="card__title">Select Your Upgrades</h2>
+    <div class="card__text">
+      <p>
+        Choose one or more of the upgrades below and member of our team with find the exact part that best suits for
+        your vehicle.
+      </p>
+    </div>
+    <form class="card__form">
+      <fieldset class="upgrade-list">
+        <legend class="upgrade-list__title">Select your upgrades</legend>
+
+        <div class="upgrade-list__grid">
+          <!-- Upgrade 1 -->
+          <label class="option upgrade-list__option">
+            <input
+              type="checkbox"
+              name="project-type"
+              value="Newsletter"
+              class="option__input sr-only"
+              aria-labelledby="project-type-0-label"
+              aria-describedby="project-type-0-description-0 project-type-0-description-1"
+            >
+            <div class="option__interactive">
+              <span class="option__content">
+                <span class="option__details">
+                  <span id="project-type-0-label" class="option__label">Upgrade 1</span>
+                  <span id="project-type-0-description-0" class="option__description">Upgrade image</span>
+                </span>
+              </span>
+              <svg class="option__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+              </svg>
+              <span class="option__border" aria-hidden="true"></span>
+            </div>
+          </label>
+
+          <!-- Upgrade 2 -->
+          <label class="option upgrade-list__option">
+            <input
+              type="checkbox"
+              name="project-type"
+              value="Newsletter"
+              class="option__input sr-only"
+              aria-labelledby="project-type-0-label"
+              aria-describedby="project-type-0-description-0 project-type-0-description-1"
+            >
+            <div class="option__interactive">
+              <span class="option__content">
+                <span class="option__details">
+                  <span id="project-type-0-label" class="option__label">Upgrade 1</span>
+                  <span id="project-type-0-description-0" class="option__description">Upgrade image</span>
+                </span>
+              </span>
+              <svg class="option__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+              </svg>
+              <span class="option__border" aria-hidden="true"></span>
+            </div>
+          </label>
+
+          <!-- Upgrade 3 -->
+          <label class="option upgrade-list__option">
+            <input
+              type="checkbox"
+              name="project-type"
+              value="Newsletter"
+              class="option__input sr-only"
+              aria-labelledby="project-type-0-label"
+              aria-describedby="project-type-0-description-0 project-type-0-description-1"
+            >
+            <div class="option__interactive">
+              <span class="option__content">
+                <span class="option__details">
+                  <span id="project-type-0-label" class="option__label">Upgrade 1</span>
+                  <span id="project-type-0-description-0" class="option__description">Upgrade image</span>
+                </span>
+              </span>
+              <svg class="option__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+              </svg>
+              <span class="option__border" aria-hidden="true"></span>
+            </div>
+          </label>
+
+          <!-- Upgrade 4 -->
+          <label class="option upgrade-list__option">
+            <input
+              type="checkbox"
+              name="project-type"
+              value="Newsletter"
+              class="option__input sr-only"
+              aria-labelledby="project-type-0-label"
+              aria-describedby="project-type-0-description-0 project-type-0-description-1"
+            >
+            <div class="option__interactive">
+              <span class="option__content">
+                <span class="option__details">
+                  <span id="project-type-0-label" class="option__label">Upgrade 1</span>
+                  <span id="project-type-0-description-0" class="option__description">Upgrade image</span>
+                </span>
+              </span>
+              <svg class="option__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+              </svg>
+              <span class="option__border" aria-hidden="true"></span>
+            </div>
+          </label>
+        </div>
+      </fieldset>
+    </form>
+    <button type="button" onclick="goToStep(1)">Back</button>
+    <button type="button" class="form__button" onclick="goToStep(3)">Next Step</button>
+  </div>
+  <!-- Step 3 -->
+  <div class="card__content" id="step3" style="display:none;">
+    <h2 class="card__title">Enter Your Details</h2>
+    <div class="card__text">
+      <p>Let us know your details so that one of experts can contact with a quuote.</p>
+    </div>
+    <form class="card__form">
+      <div class="form__group">
+        <label for="make" class="form__label">Make</label>
+        <input type="text" name="make" id="email" class="form__input" placeholder="Vehicle Make">
+      </div>
+      <div class="form__group">
+        <label for="model" class="form__label">Model</label>
+        <input type="text" name="model" id="email" class="form__input" placeholder="Vehicle Model">
+      </div>
+      <div class="form__group">
+        <label for="year" class="form__label">Year</label>
+        <input type="text" name="year" id="email" class="form__input" placeholder="Vehicle Year">
+      </div>
+    </form>
+    <button type="button" onclick="goToStep(2)">Back</button>
+    <button type="button" class="form__button" onclick="goToStep(4)">Next Step</button>
+  </div>
+  <!-- Step 4 -->
+  <div class="card__content" id="step4" style="display:none;">
+    <h2 class="card__title">You Are All Set!</h2>
+    <div class="card__text">
+      <p>Sit tight and we will be in contact with your customised quote within 48 hours.</p>
+    </div>
+    <form class="card__form">
+      <div class="form__group">
+        <label for="make" class="form__label">Make</label>
+        <input type="text" name="make" id="email" class="form__input" placeholder="Vehicle Make">
+      </div>
+      <div class="form__group">
+        <label for="model" class="form__label">Model</label>
+        <input type="text" name="model" id="email" class="form__input" placeholder="Vehicle Model">
+      </div>
+      <div class="form__group">
+        <label for="year" class="form__label">Year</label>
+        <input type="text" name="year" id="email" class="form__input" placeholder="Vehicle Year">
+      </div>
+    </form>
+    <button type="button" onclick="goToStep(3)">Back</button>
+  </div>
+</div>
+
+{% style %}
+  h1 {
+    text-align: center;
+    padding-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .progress__list {
+    display: flex;
+    gap: 1.8rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    margin-bottom: 1rem;
+  }
+
+  .progress__item {
+    flex: 1;
+    list-style: none;
+  }
+
+  .progress__link {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    text-decoration: none;
+  }
+
+  .progress__step {
+    font-size: 0.775rem;
+    font-weight: 400;
+  }
+
+  .progress__detail {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #212121;
+  }
+
+  /* Modifiers for completed steps */
+  .progress__link--completed {
+    border-top: 4px solid #dc2626;
+    color: #991b1b;
+  }
+
+  .progress__link--completed:hover {
+    border-color: #f87171;
+  }
+
+  /* Modifiers for upcoming steps */
+  .progress__link {
+    border-top: 4px solid #f87171;
+    color: #f87171;
+  }
+
+  .progress__link:hover {
+    border-top: 4px solid #dc2626;
+  }
+
+  /* Modifiers for current steps */
+  .progress__link--current {
+    border-top: 4px solid #dc2626;
+  }
+
+  .progress__link--current > span:nth-of-type(2n) {
+    font-weight: 600;
+  }
+
+  .card {
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .card__content {
+      padding: 3rem;
+    }
+  }
+
+  .card__title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .card__text {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  .card__form {
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .form__group {
+    flex: 1 1 100%;
+    margin-right: 1rem;
+  }
+
+  /* Responsive layout for form */
+  @media (min-width: 640px) {
+    .form__group {
+      flex: 1 1 auto;
+      max-width: 20rem;
+    }
+
+    .card__form {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .form__input {
+    width: 100%;
+    padding: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    border: 1px solid rgba(156, 163, 175, 0.5);
+    border-radius: 0.375rem;
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  button.form__button {
+    margin: 1.4rem auto;
+  }
+
+  /* Step 2 */
+  .upgrade-list {
+  }
+
+  .upgrade-list__title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    color: #4a5568;
+  }
+
+  .upgrade-list__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    .upgrade-list__grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  .option {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    border: 1px solid #f87171;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .option__input:checked + .option__content + .option__icon {
+    visibility: visible;
+    fill: #dc2626;
+  }
+
+  .option__input:checked + .option__content + .option__border {
+    border-color: #f87171;
+  }
+
+  .option__input:focus + .option__content + .option__border {
+    border-width: 2px;
+    border-color: #f87171;
+  }
+
+  .option__content {
+    flex: 1;
+    display: flex;
+  }
+
+  .option__details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .option__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a5568;
+  }
+
+  .option__description,
+  .option__count {
+    font-size: 0.875rem;
+    color: #718096;
+  }
+
+  .option__count {
+    font-weight: 500;
+    margin-top: 1.5rem;
+  }
+
+  .option__icon {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    color: #6366f1;
+  }
+
+  .option__border {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -4px;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+  }
+
+  .option--checked {
+    border-color: #f87171;
+  }
+
+  .option--checked .option__icon {
+    visibility: visible;
+    fill: #f87171;
+  }
+
+  .option--checked .option__border {
+    border-width: 2px;
+    border-color: #f87171;
+  }
+
+  .option:hover,
+  .option__input:checked ~ .option__interactive .option:hover {
+    border-color: #f87171; /* Ensures hover color remains after checked */
+  }
+
+  .option:focus-within {
+    box-shadow: 0 0 0 3px #f87171;
+  }
+
+  .option--disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .option__icon {
+    /* Define default state for icon */
+    visibility: hidden;
+    fill: #000; /* Default fill */
+  }
+
+  .option__input:checked ~ .option__interactive .option__border {
+    border-color: #f87171; /* Checked state border color */
+  }
+  .option__input:checked ~ .option__interactive .option__icon {
+    visibility: visible; /* Show icon only when checked */
+    fill: #dc2626; /* Fill color for checked state */
+  }
+{% endstyle %}
+
+<script>
+  // Function to directly navigate to a specific step
+  function goToStep(stepNum) {
+    console.log('Moving to step:', stepNum); // Debugging line
+    // Hide all steps and remove current class from all nav links
+    var allSteps = document.getElementsByClassName('card__content');
+    var allNavLinks = document.querySelectorAll('.progress__link');
+    for (var i = 0; i < allSteps.length; i++) {
+      allSteps[i].style.display = 'none';
+      allNavLinks[i].classList.remove('progress__link--current');
+    }
+
+    // Show the specified step and highlight the corresponding nav link
+    var stepToShow = document.getElementById('step' + stepNum);
+    var navLinkToHighlight = document.getElementById('navStep' + stepNum);
+    if (stepToShow && navLinkToHighlight) {
+      stepToShow.style.display = 'block';
+      navLinkToHighlight.classList.add('progress__link--current');
+    } else {
+      console.error('Failed to find elements for step:', stepNum); // Debugging line
+    }
+  }
+
+  // Add event listeners to the navigation links
+  document.addEventListener('DOMContentLoaded', function () {
+    // Initialize the first step
+    goToStep(1);
+
+    // Setup click event for each nav link
+    var navLinks = document.querySelectorAll('.progress__link');
+    navLinks.forEach(function (link, index) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        goToStep(index + 1); // Index is 0-based; steps are 1-based
+      });
+    });
+  });
+</script>
