@@ -49,7 +49,7 @@
         </form>
       </div>
       <div class="button-container">
-        <button type="button" class="form__button" onclick="goToStep(2)">Next Step</button>
+        <button type="button" class="form__button" id="nextStep1">Next Step</button>
       </div>
     </div>
   </div>
@@ -507,8 +507,8 @@
         </div>
       </fieldset>
       <div class="button-container">
-        <button type="button" class="form__button" onclick="goToStep(1)">Back</button>
-        <button type="button" class="form__button" onclick="goToStep(3)">Next Step</button>
+        <button type="button" class="form__button" id="backStep1">Back</button>
+        <button type="button" class="form__button" id="nextStep2">Next Step</button>
       </div>
     </form>
   </div>
@@ -567,7 +567,7 @@
         </div>
       </div>
       <div class="button-container">
-        <button type="button" class="form__button" onclick="goToStep(2)">Back</button>
+        <button type="button" class="form__button" id="backStep2">Back</button>
         <button type="button" class="form__button" onclick="goToStep(4)">Finish</button>
       </div>
     </form>
@@ -641,6 +641,8 @@
   }
 
   .vehicle-container {
+    display: flex;
+    justify-content: center;
     width: 100%;
   }
 
@@ -921,12 +923,15 @@
     height: 80px;
     min-height: 80px;
   }
+
+  .select-wrapper {
+    width: 100%;
+  }
 {% endstyle %}
 
 <script>
   // Function to directly navigate to a specific step
   function goToStep(stepNum) {
-    console.log('Moving to step:', stepNum); // Debugging line
     // Hide all steps and remove current class from all nav links
     var allSteps = document.getElementsByClassName('card__content');
     var allNavLinks = document.querySelectorAll('.progress__link');
@@ -942,7 +947,6 @@
       stepToShow.style.display = 'block';
       navLinkToHighlight.classList.add('progress__link--current');
     } else {
-      console.error('Failed to find elements for step:', stepNum); // Debugging line
     }
   }
 
@@ -961,6 +965,7 @@
     });
   });
 
+  // Add event listeners to upgrade options
   document.getElementById('upgradesForm').addEventListener('change', function (e) {
     if (e.target.type === 'checkbox') {
       let checkedValues = [];
@@ -972,6 +977,22 @@
 
       document.getElementById('upgrades').value = checkedValues.join(', ');
     }
+  });
+
+  // Event listeners for back and next buttons
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('nextStep1').addEventListener('click', function () {
+      goToStep(2);
+    });
+    document.getElementById('nextStep2').addEventListener('click', function () {
+      goToStep(3);
+    });
+    document.getElementById('backStep1').addEventListener('click', function () {
+      goToStep(1);
+    });
+    document.getElementById('backStep2').addEventListener('click', function () {
+      goToStep(2);
+    });
   });
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -988,7 +1009,7 @@
     const displayYear = document.getElementById('display-year');
 
     // Fetch vehicle data
-    fetch('https://cdn.shopify.com/s/files/1/0580/6050/5263/files/vehicles.json')
+    fetch('https://cdn.shopify.com/s/files/1/0580/6050/5263/files/vehicle-json.json')
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
