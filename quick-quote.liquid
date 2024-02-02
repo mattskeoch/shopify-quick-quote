@@ -1023,21 +1023,19 @@
       })
       .catch((error) => console.error('Error fetching vehicle data:', error));
 
-    selectMake.addEventListener('change', function () {
-      const selectedMake = this.value;
-      displayMake.textContent = selectedMake;
-      updateModels(selectedMake);
-    });
-
-    selectModel.addEventListener('change', function () {
-      const selectedModel = this.value;
-      displayModel.textContent = selectedModel;
-      updateYears(selectedModel);
-    });
-
-    selectYear.addEventListener('change', function () {
-      const selectedYear = this.value;
-      displayYear.textContent = selectedYear;
+    document.getElementById('vehicle-form').addEventListener('change', function (event) {
+      if (event.target.matches('#select-make')) {
+        const selectedMake = event.target.value;
+        displayMake.textContent = selectedMake;
+        updateModels(selectedMake);
+      } else if (event.target.matches('#select-model')) {
+        const selectedModel = event.target.value;
+        displayModel.textContent = selectedModel;
+        updateYears(selectedModel);
+      } else if (event.target.matches('#select-year')) {
+        const selectedYear = event.target.value;
+        displayYear.textContent = selectedYear;
+      }
     });
 
     function updateDropdown(dropdown, options) {
