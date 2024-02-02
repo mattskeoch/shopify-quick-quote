@@ -1041,12 +1041,26 @@
     });
 
     function updateDropdown(dropdown, options) {
-      dropdown.innerHTML = options.map((option) => `<option value="${option}">${option}</option>`).join('');
+      // First, clear the dropdown to remove existing options
+      while (dropdown.firstChild) {
+        dropdown.removeChild(dropdown.firstChild);
+      }
+
+      // Then, for each option in the options array, create a new option element and append it to the dropdown
+      options.forEach((option) => {
+        const optionElement = document.createElement('option'); // Create a new OPTION element
+        optionElement.value = option; // Set the value of the option
+        optionElement.textContent = option; // Set the display text of the option
+        dropdown.appendChild(optionElement); // Append the option element to the dropdown
+      });
+
+      // Optionally, reset the dropdown to its default state or to a placeholder value if necessary
+      dropdown.value = '';
     }
 
     function updateModels(make) {
+      let models = [];
       if (make && vehicleData[make]) {
-        models = [];
         const modelCategories = Object.keys(vehicleData[make]);
         modelCategories.forEach((category) => {
           const modelsInCategory = Object.keys(vehicleData[make][category]);
@@ -1056,18 +1070,23 @@
         });
         updateDropdown(selectModel, models);
       } else {
-        models = [];
-        updateDropdown(selectModel, models);
+        updateDropdown(selectModel, models); // This will clear the models dropdown
       }
+      // Reset the model dropdown and manually trigger a change event
       selectModel.value = '';
-      years = [];
+      selectModel.dispatchEvent(new Event('change')); // Manually trigger the change event
+
+      // Reset and update the years dropdown
+      let years = [];
       updateDropdown(selectYear, years);
+      // Manually trigger a change event for the selectYear dropdown to ensure any attached listeners are notified
+      selectYear.dispatchEvent(new Event('change'));
     }
 
     function updateYears(selectedModel) {
       if (selectedModel && selectMake.value && vehicleData[selectMake.value]) {
         const [category, modelFromSplit] = selectedModel.split(' - ');
-        years =
+        let years =
           vehicleData[selectMake.value][category] && vehicleData[selectMake.value][category][modelFromSplit]
             ? vehicleData[selectMake.value][category][modelFromSplit]
             : [];
